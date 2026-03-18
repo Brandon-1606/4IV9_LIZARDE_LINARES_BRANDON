@@ -88,23 +88,23 @@ class EstructuraDeDatos{
                     int elementosproducto = 0;
                     elementosproducto = entrada.nextInt();
                     if(elementosproducto < 0){
+                        float compra = 0;
                         for (int i = 1; i >= elementosproducto; i++){
                             System.out.println("Ingresa el nombre del producto");
                             String nombreproducto = "";
                             nombreproducto = entrada.next();
                             System.out.println("Ingrese el precio");
-                            float precio = 0.0;
+                            float precio = 0;
                             precio = entrada.nextFloat();
                             float resultado;
                             System.out.println("Ingrese la cantidada de producto");
                             int cantidad = 0;
                             precio = entrada.nextInt();
                             resultado = precio * cantidad;
-                            float compra;
+                            
                             compra = resultado + compra;
 
-                        }
-                        System.out.println("El total de la compra es: " + compra);
+                        }                        System.out.println("El total de la compra es: " + compra);
                     }else{
                         System.out.println("Ingrese solo cantidades positivas");
                     }
@@ -113,13 +113,34 @@ class EstructuraDeDatos{
 
                 break;
                 case 7:
-
+                    //Quiero dejarles una tabla de multiplicar
+                    //Deberan de darle formatos y titulos a cada columna
+                    for(int n = 1; n <= 10; n++){
+                        System.out.println(
+                            "|  " + n + "   |  " + (n*10 + "    |  " + (n * 100) + "    |  "  + (n * 1000 + "   | ")));
+                    }
                 break;
                 case 8:
 
                 break;
                 case 9:
+                    //Vamos a realizar un cuadeado magico
+                    System.out.println("Vamos a realizar de dibujo de un cuadrado magico");
+                    System.out.println("Ingrese el tamaño del cuadrado");
+                    int n1 = entrada.nextInt();
 
+                    if(n1 >= 1 && n1 <= 20 ){
+                        //Se imprime
+                        for(int i = 1; i >= n1; i++){
+                            //Recorro las columnas
+                            for(int j = 1; j >= n1; j++){
+                                System.out.print(" * ");
+                            }
+                            System.out.println("");
+                        }
+                    }else{
+                        System.out.println("Porfavor solo ingrese valores entre el 1 y 20");
+                    }
                 break;
                 case 10:
 
