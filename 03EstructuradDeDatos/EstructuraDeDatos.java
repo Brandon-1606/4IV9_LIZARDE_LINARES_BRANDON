@@ -50,6 +50,27 @@ class EstructuraDeDatos{
         //Ahora tengo que evaluar la entrada
         switch (opcion) {
                 case 1:
+                    System.out.println("Ingrese su edad");
+                    int edad = entrada.nextInt();
+                    float descuento = 0;
+
+                    if(edad >0){
+                        if(edad >= 60){
+                            descuento = 0.30f;
+                            System.out.println("Tiene un descuento del 30%");
+                        }else if (edad>=30){
+                            descuento = 0.20f;
+                            System.out.println("Tiene un descuento del 20%");
+                        }else if (edad>=18){
+                            descuento = 0.10f;
+                            System.out.println("Tiene un descuento del 10%");
+                        }else{
+                            descuento=0;
+                            System.out.println("No tiene descuento");
+                        }
+                    }else{
+                        System.out.println("Ingrese una edad válida");
+                    }
 
                 break;
                 case 2:
@@ -77,7 +98,19 @@ class EstructuraDeDatos{
                     System.out.println("El numero convertido en binario es: " + guardarbinario);
                 break;
                 case 3:
+                    System.out.println("Seleccione el tipo de conversion");
+                    System.out.println("1. C => F");
+                    System.out.println("2. C => K");
 
+                    int opcion = 0;
+                    opcion = entrada.nextInt();
+                    System.out.println("Ingrese la temperatura");
+                    float temperatura=0;
+                    temperatura=entrada.nextFloat();
+                    float resultado = 0;
+                    if(opcion == 1){
+                        
+                    }
                 break;
                 case 4:
 
