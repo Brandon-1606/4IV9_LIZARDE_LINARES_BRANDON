@@ -389,11 +389,11 @@ class EstructuraDeDatos{
                     System.out.println("Hasta pronto...");
                     return;
                 default:
-                                       break;
+                                    break;
 
         }
-        System.out.println("Deseas repetir el programa, escribe s o S para si");
-        letrapararepetir = entrada.next().charAt(0);
-    }while(letrapararepetir == 's' || letrapararepetir == 'S');
-}
+            System.out.println("Deseas repetir el programa, escribe s o S para si");
+            letrapararepetir = entrada.next().charAt(0);
+        }while(letrapararepetir == 's' || letrapararepetir == 'S');
+    }
 }
