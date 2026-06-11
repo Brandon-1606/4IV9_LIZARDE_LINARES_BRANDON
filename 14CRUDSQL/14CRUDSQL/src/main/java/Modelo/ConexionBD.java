@@ -8,40 +8,46 @@ package Modelo;
  *
  * @author lizar
  */
+
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-        
 
 public class ConexionBD {
+    
     /*
-    Connection se encarga de solo y unicamente de conectarse al servidor de la base de datos
-    Statement es el que se encarga de realizar las sentencias de sql, LDD Y LMD
-    Resultset este objeto es unico y exclusivamente para poder realizar las consultas a las tablas
+    Connection es la que se encarga de solo y unicamente conectarse 
+    al servidor de la BD
+    Statement es el que se encarga de realizar las sentencias de sql, 
+    LDD, y LMD
+    ResultSet este objeto es unico y esclusivamente para poder realizar
+    las consultas a las tablas
     */
     
-    private static final String URL = "jdbc:mysql//localhost:3306/productos_sql";
-    private static final String USUARIO = "rost";
+    private static final String URL = 
+            "jdbc:mysql://localhost:3306/productos_sql?serverTimezone=America/Mexico_City";
+    private static final String USUARIO = "root";
     private static final String PASSWORD = "Lombardos1?";
     
-    public static connection getConexion() throw Exception{
-        try{
+    public static Connection getConexion() throws SQLException {
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            
-        } catch(ClassNotFoundException e) {
-            throw new SQLException("Driver no encontrado");
-            
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Driver no encontrado", e);
         }
+
         return DriverManager.getConnection(URL, USUARIO, PASSWORD);
-    }
+    }   
     
     public static boolean probarConexion() {
-        try{
+        try {
             Connection con = getConexion();
-            return con ! = null && !con.isClosed();
             System.out.println("Si se conecto");
-        }catch(SQLException e) {
-            System.out.println("Error de conexion: " e.getMessage());
+            return con != null && !con.isClosed();
+            
+        } catch (SQLException e) {
+            System.out.println("Error de conexion: " + e.getMessage());
             return false;
         }
     }
